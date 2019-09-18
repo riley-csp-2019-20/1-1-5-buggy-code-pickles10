@@ -1,23 +1,49 @@
-#   a115_buggy_image.py
+#   a115_ladybug.py
 import turtle as trtl
+while (1 == 1):
+# create ladybug head
+  ladybug = trtl.Turtle()
+  ladybug.pensize(40)
+  ladybug.circle(5)
 
-turtle = trtl.Turtle()
-#Create spiders body
-turtle.pensize(40)
-turtle.circle(20)
-# Configure spiders legs
-Legs = 8
-length = 80
-circle = 360/ Legs
-#73373553724225 is for more relistic spider 
-turtle.pensize(5)
-x = 0
-#Draw legs
-while (x < Legs):
-  turtle.goto(0,15)
-  turtle.setheading(circle*x)
-  turtle.forward(length)
-  x= x+ 1
-turtle.hideturtle()
+  # and body
+  ladybug.penup()
+  ladybug.goto(0, -55) 
+  ladybug.color("yellow")
+  ladybug.pendown()
+  ladybug.pensize(40)
+  ladybug.circle(20)
+  ladybug.setheading(270)
+  ladybug.color("black")
+  ladybug.penup()
+  ladybug.goto(0, 5)
+  ladybug.pensize(2)
+  ladybug.pendown()
+  ladybug.forward(75)
+
+  # config dots
+  num_dots = 1
+  xpos = -20
+  ypos = -55
+  ladybug.pensize(10)
+
+  # draw two sets of dots
+  while (num_dots <= 2 ):
+    ladybug.penup()
+    ladybug.goto(xpos, ypos)
+    ladybug.pendown()
+    ladybug.circle(3)
+    ladybug.penup()
+    ladybug.goto(xpos + 30, ypos + 20)
+    ladybug.pendown()
+    ladybug.circle(2)
+
+    # position next dots
+    ypos = ypos + 25
+    xpos = xpos + 5
+    num_dots = num_dots + 1
+
+ladybug.hideturtle()
+
 wn = trtl.Screen()
 wn.mainloop()
